@@ -27,7 +27,7 @@ public class Calculator {
 			consumeToken();
 			expRight = parseExp2();
 			Expression[] args = {expLeft, expRight};
-			expLeft = new FuncExpression(type, new ArrayList<Expression>(Arrays.asList(args)));
+			expLeft = new FuncExpression(type, args);
 		}
 		return expLeft;
 	}
@@ -41,7 +41,7 @@ public class Calculator {
 			consumeToken();
 			Expression exp1 = new ConstExpression("-1");
 			Expression[] args = { exp1, parseExp2() };
-			expLeft = new FuncExpression("*",  new ArrayList<Expression>(Arrays.asList(args)));
+			expLeft = new FuncExpression("*",  args);
 		}else{
 			expLeft = parseExp3();
 		}
@@ -51,7 +51,7 @@ public class Calculator {
 			consumeToken();
 			expRight = parseExp3();
 			Expression[] args = {expLeft, expRight};
-			expLeft = new FuncExpression(type, new ArrayList<Expression>(Arrays.asList(args)));
+			expLeft = new FuncExpression(type, args);
 		}
 		return expLeft;
 	}
